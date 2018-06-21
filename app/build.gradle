@@ -1,5 +1,14 @@
 apply plugin: 'com.android.application'
 
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -25,4 +34,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation group: 'commons-io', name: 'commons-io', version: '2.4'
+    implementation(name:'app-debug', ext:'aar')
 }
